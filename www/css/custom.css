@@ -1,8 +1,9 @@
-div .container
+.container
 {
     overflow-x: hidden !important;
     overflow-y: hidden !important;
-    margin: 0 0 !important;
+    margin: 0px 0px !important;
+    width: 100vw !important;
 }
 
 header, footer
@@ -13,19 +14,21 @@ header, footer
 
 header
 {
-    height: 5vh;
+    height: 5vh !important;
 }
 
 main
 {
-    height: 77.5vh;
+    height: 85vh !important;
+    width: 100vw !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
 }
 
 footer
 {
-    height: 10vh;
+    height: 10vh !important;
+    width: 100vw !important;
 }
 
 .center-itens
@@ -33,4 +36,20 @@ footer
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+}
+
+.title
+{
+    font-size: 20px;
+    margin: 0px;
+}
+
+.list-container
+{
+    justify-content: space-between !important;
+}
+
+.check-center::before, .check-center::after
+{
+    top: 30% !important;
 }

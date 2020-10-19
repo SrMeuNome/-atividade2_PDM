@@ -9,19 +9,24 @@
         <link rel="stylesheet" href="css/materialize.css">
         <link rel="stylesheet" href="css/icons.css">
         <link rel="stylesheet" href="css/custom.css">
-        <title>Hello World</title>
+        <title>List Levels</title>
     </head>
     <body>
         <div class="container">
-            <header class="red darken-4 white-text">
-                <h5>Contador:</h5>
+            <header class="red darken-4 white-text center-itens">
+                <h5 id="qtd" class="title"></h5>
             </header>
-            <main class="">
+            <main>
                 <ul class="collection">
-                    <li class="collection-item avatar">
-                      <img src="images/yuna.jpg" alt="" class="circle">
-                      <span class="title">Title</span>
-                      <a href="#!" class="secondary-content"><i class="material-icons">clear</i></a>
+                    <li class="collection-item">
+                        <div class="center-itens list-container">
+                            <label>
+                                <input type="checkbox" class="filled-in circle" checked="checked" />
+                                <span class="check-center"></span>
+                            </label>
+                            <span class="title">Title</span>
+                            <a href="#!" class="center-itens"><i class="material-icons blue-text">clear</i></a>
+                        </div>
                     </li>
             </main>
             <footer class="page-footer red darken-4 center-itens">
@@ -37,8 +42,9 @@
             </footer>
         </div>
         <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
+        <!--<script src="js/index.js"></script>-->
         <script src="js/jquery.js"></script>
         <script src="js/materialize.js"></script>
+        <script scr="js/custom.js"></script>
     </body>
 </html>
