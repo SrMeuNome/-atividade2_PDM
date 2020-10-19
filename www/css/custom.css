@@ -1,0 +1,36 @@
+div .container
+{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+    margin: 0 0 !important;
+}
+
+header, footer
+{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+header
+{
+    height: 5vh;
+}
+
+main
+{
+    height: 77.5vh;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+footer
+{
+    height: 10vh;
+}
+
+.center-itens
+{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
