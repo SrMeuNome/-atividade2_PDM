@@ -12,9 +12,10 @@
         <title>List Levels</title>
     </head>
     <body>
+        <div id="error" style="display: none;" class="error"><p id="error-text" class="text-alert"></p><button onclick="$('#error').fadeOut('2.5s')" class="ok-error waves-effect waves-light">Ok</button></div>
         <div class="container">
             <header class="red darken-4 white-text center-itens">
-                <h5 id="qtd" class="title"></h5>
+                <h5 id="qtd" class="title">Contador: 0</h5>
             </header>
             <main>
                 <ul id="list-level" class="collection">
