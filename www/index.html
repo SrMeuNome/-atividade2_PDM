@@ -17,17 +17,9 @@
                 <h5 id="qtd" class="title"></h5>
             </header>
             <main>
-                <ul class="collection">
-                    <li class="collection-item">
-                        <div class="center-itens list-container">
-                            <label>
-                                <input type="checkbox" class="filled-in circle" checked="checked" />
-                                <span class="check-center"></span>
-                            </label>
-                            <span class="title">Title</span>
-                            <a href="#!" class="center-itens"><i class="material-icons blue-text">clear</i></a>
-                        </div>
-                    </li>
+                <ul id="list-level" class="collection">
+                    
+                </ul>
             </main>
             <footer class="page-footer red darken-4 center-itens">
                 <div class="row center-itens">
@@ -36,7 +28,7 @@
                         <label for="codigo" class="white-text">Código:</label>
                     </div>
                     <div class="col s2">
-                        <a class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
+                        <a onclick="addList()" class="btn-floating btn-medium waves-effect waves-light red"><i class="material-icons">add</i></a>
                     </div>
                 </div>
             </footer>
@@ -45,6 +37,6 @@
         <!--<script src="js/index.js"></script>-->
         <script src="js/jquery.js"></script>
         <script src="js/materialize.js"></script>
-        <script scr="js/custom.js"></script>
+        <script src="js/custom.js"></script>
     </body>
 </html>

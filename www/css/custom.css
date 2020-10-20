@@ -44,6 +44,11 @@ footer
     margin: 0px;
 }
 
+.text-list
+{
+    font-size: 18px;
+}
+
 .list-container
 {
     justify-content: space-between !important;
