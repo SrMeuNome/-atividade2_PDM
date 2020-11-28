@@ -70,6 +70,7 @@ const addList = () => {
         $('#codigo').val('')
         carregarLista()
     }
+    $('label[for="codigo"]').attr('class', $('label[for="codigo"]').attr('class').replace(/\bactive\b/g, ''))
 }
 
 const pressEnter = (event) => {
