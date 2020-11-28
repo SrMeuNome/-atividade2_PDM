@@ -1,4 +1,32 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+    apiKey: "AIzaSyCnwuTrTvnPIGHkH_CMfyM0WXbKxgsq97U",
+    authDomain: "atividade2-pdm-729c7.firebaseapp.com",
+    databaseURL: "https://atividade2-pdm-729c7.firebaseio.com",
+    projectId: "atividade2-pdm-729c7",
+    storageBucket: "atividade2-pdm-729c7.appspot.com",
+    messagingSenderId: "408349740368",
+    appId: "1:408349740368:web:e3f77896b02a4561af7055"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+var levelsDB = firebase.database().ref('levels')
+
+
 var list = []
+
+const carregarLista = () => {
+    list = []
+    value = {}
+    levelsDB.on('value', function (levels) {
+        levels.forEach(function (level, index) {
+            value = { id: level.key, text: level.val().text, checked: level.val().checked }
+            list.push(value)
+        })
+        refleshList()
+    })
+}
 
 const refleshList = () => {
     var listHTML = []
@@ -20,23 +48,46 @@ const refleshList = () => {
     $('#qtd').html(`Contador: ${list.length}`)
 }
 
+$(document).ready(function () {
+    carregarLista()
+})
+
+const msgAlert = (text) => {
+    $('#error-text').html(text)
+    $('#error').fadeIn('2.5s')
+}
+
 const addList = () => {
     if ($('#codigo').val() === '') {
-        $('#error-text').html("Você deve preencher o campo antes!")
-        $('#error').fadeIn('2.5s')
+        msgAlert("Você deve preencher o campo antes!")
     }
     else {
-        list.push({ text: $('#codigo').val(), checked: false })
+        levelsDB.push({ text: $('#codigo').val(), checked: false }, (a) => {
+            if (a) {
+                msgAlert("Ocorreu um erro ao adicionar um novo item, verifique sua conexão!")
+            }
+        })
         $('#codigo').val('')
-        refleshList()
+        carregarLista()
     }
 }
 
 const check = (id) => {
-    list[id].checked = !list[id].checked
+    levelsDB.child(list[id].id).update({
+        "checked": !list[id].checked
+    }, (a) => {
+        if (a) {
+            msgAlert("Ocorreu um erro ao marcar essa opção, verifique sua conexão!")
+        }
+    })
+    carregarLista()
 }
 
 const deleteList = (id) => {
-    list.splice(id, 1)
-    refleshList()
+    levelsDB.child(list[id].id).remove((a) => {
+        if (a) {
+            msgAlert("Ocorreu um erro ao deletar um item, verifique sua conexão!")
+        }
+    })
+    carregarLista()
 }
