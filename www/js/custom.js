@@ -72,6 +72,12 @@ const addList = () => {
     }
 }
 
+const pressEnter = (event) => {
+    if (event.keyCode == 13) {
+        addList()
+    }
+}
+
 const check = (id) => {
     levelsDB.child(list[id].id).update({
         "checked": !list[id].checked
